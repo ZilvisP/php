@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6080d6ff-b3ac-43e3-9b50-8801a32fee73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/projecto_failai/public_html/uzduotys/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projecto_failai/public_html/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projecto_failai/public_html/kursiustiduomenis.php" beforeDir="false" afterPath="$PROJECT_DIR$/projecto_failai/public_html/uzduotys/kursiustiduomenis.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JAYo69L2JseXEubgDmkPnFRnBR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\archaean\Desktop\Code_Academy\New_Project\projecto_failai\public_html\uzduotys\factorials" />
+      <recent name="C:\Users\archaean\Desktop\Code_Academy\New_Project\projecto_failai\public_html" />
+      <recent name="C:\Users\archaean\Desktop\Code_Academy\New_Project\projecto_failai\public_html\uzduotys" />
+      <recent name="C:\Users\archaean\Desktop\Code_Academy\New_Project\projecto_failai\public_html\destytojo" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6080d6ff-b3ac-43e3-9b50-8801a32fee73" name="Changes" comment="" />
+      <created>1671522526990</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671522526990</updated>
+      <workItem from="1671522528115" duration="6908000" />
+      <workItem from="1671532099199" duration="2417000" />
+      <workItem from="1671534777418" duration="16049000" />
+      <workItem from="1671608935883" duration="323000" />
+      <workItem from="1671609309460" duration="32050000" />
+      <workItem from="1671644947453" duration="59000" />
+      <workItem from="1671651087540" duration="48000" />
+      <workItem from="1671692076954" duration="25131000" />
+      <workItem from="1671726515355" duration="2286000" />
+      <workItem from="1671779239956" duration="25003000" />
+      <workItem from="1672124755218" duration="22959000" />
+      <workItem from="1672210940636" duration="25136000" />
+      <workItem from="1672245099874" duration="192000" />
+      <workItem from="1672245381445" duration="60000" />
+      <workItem from="1672297035857" duration="16033000" />
+      <workItem from="1672314855843" duration="12000000" />
+      <workItem from="1672383681416" duration="28408000" />
+      <workItem from="1672413274579" duration="1690000" />
+      <workItem from="1672642253354" duration="17521000" />
+      <workItem from="1672729649486" duration="324000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/projecto_failai/src/Asmuo.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
