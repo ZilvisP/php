@@ -1,0 +1,62 @@
+
+.naujasasmuo input[type="text"] {
+    border-radius: 25px;
+}
+
+.naujasasmuo input[name="vardas"] {
+    background-color: #218BC3;
+}
+
+.naujasasmuo input[name="pavarde"] {
+    background-color: #F56C6C;
+}
+
+.naujasasmuo input[name="email"] {
+    background-color: #409EFF;
+}
+
+.naujasasmuo input[name="A_kodas"] {
+    background-color: #67C23A;
+}
+
+.naujasasmuo input[name="tel"] {
+    background-color: #E6A23C;
+}
+
+.naujasasmuo input[name="addr_id"] {
+    background-color: #909399;
+}
+
+
+/*.firstinput {*/
+/*    border-radius: 25px;*/
+/*    background-color: #218BC3;*/
+/*}*/
+
+/*.secondinput {*/
+/*    border-radius: 25px;*/
+/*    background-color: #F56C6C;*/
+/*}*/
+
+/*.thirdinput {*/
+/*    border-radius: 25px;*/
+/*    background-color: #409EFF;*/
+/*}*/
+
+/*.fourthinput {*/
+/*    border-radius: 25px;*/
+/*    background-color: #67C23A;*/
+/*}*/
+
+/*.fifthinput {*/
+/*    border-radius: 25px;*/
+/*    background-color: #E6A23C;*/
+/*}*/
+
+/*.sixthinput {*/
+/*    border-radius: 25px;*/
+/*    background-color: #909399;*/
+/*}*/
+/*.seventhinput{*/
+/*    border-radius: 25px;*/
+/*    background-color: #F3F3F3;*/

@@ -6,9 +6,14 @@ use Mod\Exceptions\UnauthenticatedException;
 
 class Authenticator
 {
-    public function authenticate(string|null $userName, string|null $password): bool
+    /**
+     * @throws UnauthenticatedException
+     */
+    public function authenticate(): void
     {
-        return $this->isLoggedIn() || !empty($userName) && !empty($password) && $this->login($userName, $password);
+        if ($this->isLoggedIn()) {
+            return;
+        }
     }
 
     /**
@@ -42,31 +47,16 @@ class Authenticator
 
         throw new UnauthenticatedException();
     }
+
+    public function logout(): void
+    {
+        // Vieta kur atjungiam lakytoja ir sunaikinam jo sesija
+        if ($_GET['logout'] ?? false) {
+            $_SESSION['logged'] = false;
+            $_SESSION['username'] = null;
+            session_destroy();
+            header('Location: /');
+            exit();
+        }
+    }
 }
-
-//elseif ($checkUser !== $username || $checkPass !== $pass) {
-//$output = new \Mod\Output();
-////                $fal = $output->store('Oi nutiko klaida! Bandyk vėliau dar karta.');
-//$output->store('Neteisingi prisijungimo duomenys');
-//catch (Exception $e) {
-//$output->store('Oi nutiko klaida! Bandyk vėliau dar karta.');
-//$log->error($e->getMessage());
-
-
-//class Authenticator
-//{
-//public function __construct()
-//{
-//}
-//public function authenticate(mixed $userName, mixed $password) {
-//    if(isset($_SESSION['logged']) && $_SESSION['logged'] === true
-//        ||
-//        ($userName === 'admin' && $password === 'slapta')
-//        ||
-//        ($userName === 'zilvis' && $password === 'pilvis'))
-//    {
-//        return true;
-//    }
-//    return false;
-//}
-//}

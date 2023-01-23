@@ -4,53 +4,55 @@ use Mod\Controllers\KontaktaiController;
 use Mod\Authenticator;
 use Mod\Controllers\AdminController;
 use Mod\Controllers\PradziaController;
-use Mod\Exceptions\UnauthenticatedException;
-use Mod\Exceptions\ElementNotFound;
-use Mod\FS;
+use Mod\Controllers\PersonController;
+use Mod\ExceptionHandler;
 use Mod\Output;
-use Mod\HtmlRender;
 use Mod\Router;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-use Mod\Controllers\PortfolioController;
+
+use Mod\Exceptions\UnauthenticatedException;
+use Mod\Exceptions\MissingVariableException;
+use Mod\FS;
+use Mod\HtmlRender;
+
+
+
+
+
 
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . "/../vendor/larapack/dd/src/helper.php";
-
-//dd('asd');
+require __DIR__ . '/../vendor/larapack/dd/src/helper.php';
 $log = new Logger('Portfolios');
-$log->pushHandler(new StreamHandler('../logs/klaidos.log', Logger::WARNING));
+$log->pushHandler(new StreamHandler('../logs/klaidos.log', Logger::INFO));
 
 $output = new Output();
 
 try {
     session_start();
 
-//    // Autentifikuojam vartotoja, tikrinam jo prisijungimo busena
-//    $authenticator = new Authenticator();
-//    $authenticator->authenticate($_POST['username'] ?? null, $_POST['password'] ?? null);
+    $authenticator = new Authenticator();
+    $adminController = new AdminController($authenticator);
+    $kontaktaiController = new KontaktaiController($log);
+    $personController = new PersonController();
 
-    $router = new Router();
+    $router = new Router($output);
     $router->addRoute('GET', '', [new PradziaController(), 'index']);
-    $router->addRoute('GET', 'admin', [new AdminController(), 'index']);
-    $router->addRoute('GET', 'kontaktai', [new KontaktaiController(), 'index']);
-    $router->addRoute('GET', 'portfolio', [new PortfolioController(), 'index']);
+    $router->addRoute('GET', 'admin', [$adminController, 'index']);
+    $router->addRoute('POST', 'login', [$adminController, 'login']);
+    $router->addRoute('GET', 'logout', [$adminController, 'logout']);
+    $router->addRoute('GET', 'kontaktai', [$kontaktaiController, 'index']);
+    $router->addRoute('GET', 'persons', [$personController, 'list']);
+    $router->addRoute('GET', 'person/new', [$personController, 'new']);
+    $router->addRoute('GET', 'person/delete', [$personController, 'delete']);
+    $router->addRoute('GET', 'person/edit', [$personController, 'edit']);
+    $router->addRoute('GET', 'person/show', [$personController, 'show']);
+    $router->addRoute('POST', 'person', [$personController, 'store']);
+    $router->addRoute('POST', 'person/update', [$personController, 'update']);
     $router->run();
-
-} catch (\Mod\Exceptions\PageNotFoundException $e) {
-    $output->store('Neradau puslapio');
-    $log->warning($e->getMessage());
-} catch (UnauthenticatedException $e) {
-    $output->store('Neteisingi prisijungimo duomenys');
-    $log->warning($e->getMessage());
-} catch (ElementNotFound $e) {
-        $output->store('Kilo klaida templeite.');
-        $log->warning($e->getMessage());
-} catch (Exception $e) {
-    $output->store('Oi nutiko klaida! Bandyk vėliau dar karta.');
-    $log->error($e->getMessage());
 }
-
-// Spausdinam viska kas buvo 'Storinta' Output klaseje
-$output->print();
+catch (Exception $e) {
+    $handler = new ExceptionHandler($output, $log);
+    $handler->handle($e);
+}

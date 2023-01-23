@@ -2,7 +2,7 @@
 
 namespace Mod\Exceptions;
 use http\Exception;
-class ElementNotFound extends \Exception
+class MissingVariableException extends \Exception
 {
     public function __construct($message = 'Elementas, kurio ieškote - NERASTAS', $code = 404)
 {
