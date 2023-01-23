@@ -1,0 +1,8 @@
+
+.idea/
+/projecto_failai/vendor/
+/projecto_failai/sql_failai/
+/projecto_failai/logs/
+/projecto_failai/composer.json
+/projecto_failai/composer.lock
+/projecto_failai/composer.phar
