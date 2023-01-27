@@ -1,6 +1,6 @@
 <?php
 
-namespace Mod;
+namespace Appsas;
 
 use PDO;
 

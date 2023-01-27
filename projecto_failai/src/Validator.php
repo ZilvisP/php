@@ -1,8 +1,8 @@
 <?php
 
-namespace Mod;
+namespace Appsas;
 
-use Mod\Exceptions\ValidatorException;
+use Appsas\Exceptions\ValidatorException;
 
 class Validator
 {
@@ -35,23 +35,5 @@ class Validator
         if($kuris < $min) {
             throw new ValidatorException('Per mazas skaitmuo. Reikalaujamas dydis min. ' . $min);
         }
-    }
-
-    #veikiantis
-    public static function phone(string $value) {
-        if (str_starts_with($value, "+")) {
-            if (strlen($value) > 12 || strlen($value) < 12 ) {
-            throw new ValidatorException('Phone number does not start with "+" or is too long');
-        }
-            elseif (str_starts_with($value, "00")) {
-                if (strlen($value) > 10 || strlen($value) < 10)
-                {
-                    throw new ValidatorException('does not start with 00 or is too long');
-                }  else {
-                    throw new ValidatorException('bad phone number');
-                }
-            }
-
-}
     }
 }

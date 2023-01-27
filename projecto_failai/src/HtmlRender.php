@@ -1,24 +1,39 @@
 <?php
 
-namespace Mod;
-use Mod\Exceptions\MissingVariableException;
+namespace Appsas;
 
-//use Mod\FS; //Nebutina nes tam paciam foldery randasi;
+use Appsas\FS;
+use Appsas\Output;
 
 class HtmlRender extends AbstractRender
 {
+    public function __construct(Output $output, protected FS $fs)
+    {
+        parent::__construct($output);
+    }
+
     public function setContent(mixed $content)
     {
+        $fileContent = $this->renderTemplate('layout/main', $content);
+
+        $this->output->store($fileContent);
+    }
+
+    /**
+     * @param string $template
+     * @param mixed $content
+     * @return string
+     */
+    public function renderTemplate(string $template, mixed $content = null): string
+    {
         // Iš kontrolerio funkcijos gautą atsakymą talpiname į main.html layout failą
-        $fs = new FS('../src/html/layout/main.html');
-        $fileContent = $fs->getFailoTurinys();
-//        $title = $this->controller::TITLE;
-//        $fileContent = str_replace("{{title}}", $title, $fileContent);
+        $this->fs->setFailoPavadinimas("../src/html/$template.html");
+        $fileContent = $this->fs->getFailoTurinys();
         if (is_array($content)) {
             foreach ($content as $key => $item) {
-                $fileContent = str_replace("{{{$key}}}", $item, $fileContent);
+                $fileContent = str_replace("{{{$key}}}", $item ?? '', $fileContent);
             }
-        } else {
+        } elseif (is_string($content)) {
             $fileContent = str_replace("{{content}}", $content, $fileContent);
         }
 
@@ -28,6 +43,6 @@ class HtmlRender extends AbstractRender
             $fileContent = str_replace($key, '', $fileContent);
         }
 
-        $this->output->store($fileContent);
+        return $fileContent;
     }
 }
